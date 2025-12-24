@@ -21,8 +21,12 @@
 #     pass
 
 
-# @dp.message(F.text == "")
+# @dp.message(F.text == "profilm")
 # async
+    # database dan user_id orqali user malumotni olaman
+#   # if malumotlar to'liqmi
+
+
 
 # database dan foodlar ni olaman
 
