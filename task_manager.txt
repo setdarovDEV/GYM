@@ -8,6 +8,8 @@ Main Code:
     Savat - Jaloliddin (7, 8)
     Oxirgi buyurtma - AboMuslim (TZ - 9)
 Docker: Jamolxon
-DevOps: Javohir
+DevOps: Komiljon
 Test: Abbos
+Language: Komiljon
+Web Admin: Doniyor
 Customer: Dilshod aka
