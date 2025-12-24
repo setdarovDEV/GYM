@@ -5,5 +5,4 @@ RUN --mount=type=cache,id=custom-pip,target=/root/.cache/pip pip install -r requ
 CMD ["python", "main.py"]
 
 #Terminalda run qilish uchun ->
-#-> docker build -t image_name  :version  image_name kichik bolishi kerak
-#-> docker build -t GYM:latest
+# Make build qilish kifoya
