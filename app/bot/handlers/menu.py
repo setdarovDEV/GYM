@@ -1,6 +1,7 @@
 from aiogram import F
 from aiogram.types import Message
 
+from app.bot.buttons.inline import menu_inline_buttons
 from app.bot.buttons.reply import menu_buttons
 from app.dispatcher import dp
 
@@ -15,12 +16,18 @@ async def menu_handler(message: Message):
 
 @dp.message(F.text == '🔥 Ozish')
 async def ozish_handler(message: Message):
-    await message.answer(text='Ozish uchun kopro sport bilan shugullanish kere')
+    btns = [('Salat', '1'), ('Tovuq', '2'), ('Olma','3')]
+    ozish = menu_inline_buttons(btns, [1], True)
+    await message.answer(text='Ozish uchun kopro sport bilan shugullanish kere', reply_markup=ozish)
 
 @dp.message(F.text == '💪 Semirish')
 async def semirish_handler(message: Message):
-    await message.answer(text="Semirish uchun kopro ovqat yiyish kere")
+    btns = [('Mol goshti', '4'), ('Grechka', '5'), ('Avokado', '6')]
+    semirish = menu_inline_buttons(btns, [1], True)
+    await message.answer(text="Semirish uchun kopro ovqat yiyish kere", reply_markup=semirish)
 
 @dp.message(F.text == '🥤 Sport ichimliklari')
 async def ichimlik_handler(message: Message):
-    await message.answer(text="Ichimliklar zarar faqat suv ichish kere")
+    btns = [('Suv', '7'), ('Kokteyl', '8'), ('RedBull', '9')]
+    ichimlik = menu_inline_buttons(btns, [1], True)
+    await message.answer(text="Ichimliklar zarar faqat suv ichish kere", reply_markup=ichimlik)
