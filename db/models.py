@@ -109,8 +109,8 @@ class Payment(Base):
     pay_amount: Mapped[int] = mapped_column(Numeric(12, 0))
     pay_date: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
-    order: Mapped[list["Order"]] = relationship()
-    user: Mapped[list["User"]] = relationship()
+    order: Mapped["Order"] = relationship()
+    user: Mapped["User"] = relationship()
 
 
 
