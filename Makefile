@@ -7,6 +7,7 @@ build:
 	docker run -it --name gym_bot_con gymbot:alpine
 
 
+
 restart:
 	docker container stop gym_bot_con
 	docker container rm gym_bot_con
