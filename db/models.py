@@ -19,3 +19,11 @@
 #
 # class Table1(Base):
 #     pass
+
+
+# @dp.message(F.text == "")
+# async
+
+# database dan foodlar ni olaman
+
+
