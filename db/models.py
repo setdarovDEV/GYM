@@ -1,5 +1,6 @@
-from sqlalchemy import create_engine, String, ForeignKey, BigInteger, Numeric, Text, SmallInteger, Enum
+from sqlalchemy import create_engine, String, ForeignKey, BigInteger, Numeric, Text, SmallInteger , Enum
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
+from enum import Enum as PyEnum
 
 engine = create_engine("postgresql+psycopg2://postgres:1@localhost:5432/sqlalchemy")
 engine.connect()
@@ -39,9 +40,9 @@ class Category(Base):
     products: Mapped[list["Product"]] = relationship(back_populates="category")
 
 
-class ProductStatus(enum.Enum):
-    active = "active"
-    inactive = "inactive"
+class ProductStatus(PyEnum):
+    ACTIVE = "active"
+    INACTIVE = "inactive"
 
 
 # =========================
@@ -58,7 +59,7 @@ class Product(Base):
     price: Mapped[int] = mapped_column(Numeric(12, 0))
     quantity: Mapped[int] = mapped_column(SmallInteger)
 
-    status: Mapped[ProductStatus] = mapped_column(Enum(ProductStatus, name="product_status"),default=ProductStatus.active)
+    status: Mapped[ProductStatus] = mapped_column(Enum(ProductStatus,values_callable=lambda x: [i.value for i in x]),default=ProductStatus.ACTIVE.value)
 
     category: Mapped["Category"] = relationship(back_populates="products")
 
