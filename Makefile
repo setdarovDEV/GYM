@@ -1,15 +1,17 @@
 pg_con:
-	#command
+	run -it --name pg -e POSTGRES_PASSWORD=1 -p 5433:5432 -d postgres:alpine
 
 build:
-	image create
-	run container
+	docker build -t gymbot:alpine .
+	docker run -it --name gym_bot_con gymbot:alpine
 
 
 restart:
-	container delete
-	image delete
-	image create
-	run container
+	docker container stop gym_bot_con
+	docker container rm gym_bot_con
+	docker image rm gymbot:alpine
+	docker build -t gymbot:alpine .
+	docker run -it --name gym_bot_con gymbot:alpine
+
 
 
