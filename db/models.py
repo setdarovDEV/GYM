@@ -1,9 +1,13 @@
 from datetime import datetime
 from sqlalchemy import create_engine, String, ForeignKey, BigInteger, Numeric, Text, SmallInteger, Enum, DateTime
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, declared_attr
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, declared_attr, Session, sessionmaker
 from enum import Enum as PyEnum
+from os import getenv
+from dotenv import load_dotenv
 
-engine = create_engine("postgresql+psycopg2://postgres:1@localhost:5432/sqlalchemy")
+load_dotenv()
+engine = create_engine(f"postgresql+psycopg2://{load_dotenv("DB_USER")}:{getenv("DB_PASSWORD")}@localhost:{getenv("DB_PORT")}/{getenv("DB_NAME")}")
+session = Session(engine)
 engine.connect()
 
 class Base(DeclarativeBase):
@@ -21,6 +25,7 @@ class User(Base):
 
     locations: Mapped[list["UserLocation"]] = relationship(back_populates="user")
     orders: Mapped[list["Order"]] = relationship(back_populates="user")
+    payments: Mapped[list["Payment"]] = relationship(back_populates="user")
 
 class UserLocation(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -29,7 +34,7 @@ class UserLocation(Base):
     longitude: Mapped[float] = mapped_column(Numeric)
     latitude: Mapped[float] = mapped_column(Numeric)
 
-    user: Mapped[list["User"]] = relationship(back_populates="locations")
+    user: Mapped["User"] = relationship(back_populates="locations")
 
 class Category(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -43,7 +48,7 @@ class ProductStatus(PyEnum):
 
 class Product(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
-    category_id: Mapped[int] = mapped_column(ForeignKey("categories.id", ondelete="NO ACTION"))
+    category_id: Mapped[int] = mapped_column(ForeignKey("categorys.id", ondelete="NO ACTION"))
     name: Mapped[str] = mapped_column(String(100))
     photo: Mapped[str] = mapped_column(String(255))
     description: Mapped[str] = mapped_column(Text)
@@ -51,7 +56,7 @@ class Product(Base):
     quantity: Mapped[int] = mapped_column(SmallInteger)
     status: Mapped[ProductStatus] = mapped_column(Enum(ProductStatus, values_callable=lambda x: [i.value for i in x]), default=ProductStatus.ACTIVE.value)
 
-    category: Mapped[list["Category"]] = relationship(back_populates="products") #
+    category: Mapped["Category"] = relationship(back_populates="products") #
 
 class Courier(Base):
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
@@ -71,6 +76,7 @@ class Delivery(Base):
     price: Mapped[int] = mapped_column(Numeric(12, 0), default=0)
     status: Mapped[DeliveryStatus] = mapped_column(Enum(DeliveryStatus, values_callable=lambda x: [i.value for i in x]), default=DeliveryStatus.PROCESSING.value)
     courier_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("couriers.id", ondelete="NO ACTION"))
+    date: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
     courier: Mapped["Courier"] = relationship(back_populates="deliveries")
     orders: Mapped[list["Order"]] = relationship(back_populates="delivery")
@@ -84,13 +90,14 @@ class Order(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("users.id", ondelete="CASCADE"))
     total: Mapped[int] = mapped_column(Numeric(12, 0), default=0)
-    delivery_id: Mapped[int] = mapped_column(ForeignKey("deliveries.id"))
+    delivery_id: Mapped[int] = mapped_column(ForeignKey("deliverys.id"))
     status: Mapped[OrderStatus] = mapped_column(Enum(OrderStatus, values_callable=lambda x: [i.value for i in x]),default=OrderStatus.PROCESS.value)
     order_date: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
-    user: Mapped[list["User"]] = relationship(back_populates="orders") #
-    delivery: Mapped[list["Delivery"]] = relationship(back_populates="orders") #
+    user: Mapped["User"] = relationship(back_populates="orders")
+    delivery: Mapped["Delivery"] = relationship(back_populates="orders")
     items: Mapped[list["OrderItem"]] = relationship(back_populates="order")
+    payments: Mapped["Payment"] = relationship(back_populates="order")
 
 class OrderItem(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -99,8 +106,8 @@ class OrderItem(Base):
     quantity: Mapped[int] = mapped_column(SmallInteger)
     amount: Mapped[int] = mapped_column(Numeric(12, 0), default=0)
 
-    order: Mapped[list["Order"]] = relationship(back_populates="items")
-    product: Mapped[list["Product"]] = relationship()
+    order: Mapped["Order"] = relationship(back_populates="items")
+    product: Mapped["Product"] = relationship()
 
 class Payment(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -109,11 +116,7 @@ class Payment(Base):
     pay_amount: Mapped[int] = mapped_column(Numeric(12, 0))
     pay_date: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
-    order: Mapped["Order"] = relationship()
-    user: Mapped["User"] = relationship()
-
-
+    order: Mapped["Order"] = relationship(back_populates="payments")
+    user: Mapped["User"] = relationship(back_populates="payments")
 
 Base.metadata.create_all(engine)
-
-
