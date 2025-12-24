@@ -1,88 +1,79 @@
------------ /Start ----------
-Reply button lar chiqaramiz
-    🥗 Kategoriyalar | 🛒 Savat | ⚙️ Sozlamalar | Promocodelarim | ℹ️ Biz haqimizda
+1. /start
+Tugmalar (Reply):
+    🥗 Menyu | 👤 Profilim | 🛒 Savat | 📜 Oxirgi Buyurtma
 
+2. 👤 Profilim
+Foydalanuvchi o'zi haqida ma'lumot kiritadi, bot esa unga maqsadini aniqlashga yordam beradi
+So'rovlar:
+    Yoshi, Jinsi, Bo'yi, Vazni
+    Vazn indeksi -> Vazningiz normal yoki Ortiqcha vazn
+    Tavsiya -> Sizga Ozish menyusi tavsiya etiladi
+    Kunlik norma -> Maqsadingiz uchun kuniga 2000 kkal yeyishingiz kerak
 
----------- ℹ️ Biz haqimizda ---------- --> ?
-Bu bot nima uchun yaralganiligi va user larga qanaqa manfati tega olishini yozamiz
+3. 🥗 Menyu (Kategoriyalar)
+Kategoriyalar (Reply):
+    🔥 Ozish | 💪 Semirish | 🥤 Sport ichimliklari
 
+4. Ozish/Semirish yoki Sport ichimliklaridan biri bosilsa
+Ozish/Semirish:
+    Inline ko'rinishida ovqatlar nomi chiqadi
+    Ovqatlardan biri bosilsa:
+        Rasm: Ovqatning ko'rinishi
+        Tavsif: Ovqatning nomi va qaysi vaqt uchun idealligi
+        Makroslar: 🔥 Kaloriya: 450kkal🥩 , Oqsil: 35g,  🧈 Yog': 10g, 🍞 Uglevod: 20g
+        Narxi: Summa
 
----------- Promocodelarim ----------
-User ga tegishli promocode lar ko'rsatiladi. Va u promocode larni qanchaligi
+        Inline tugmalar:
+            🛒 Savatga | Menyu
 
+Sport ichimliklari:
+    Inline ko'rinishida ichimliklarni nomlarini ko'rsatiladi
+    Ichimliklardan bii tanlansa:
+        Rasm: Ichimlikning rasmi
+        Tavsif: .....
+        Makroslar: 100 ml da: ->  Kaloriya: 45kkal, Uglevod: 11g, Shakar: 10g, Oqsil: 0g, Yog‘: 0g
+        Narxi: Summa
 
----------- ⚙️ Sozlamalar ----------
-Sozlamalar joyida user telefon raqamini o'zgartira oladi -> Qilinishi shart
-Ovqat yetkizib berilishi kerak bo'lgan location ni o'zgartira oladi -> Qilinishi shart
-Sotib olingan ovqatni o'zgartira olishi mumkin. Yani ovqat o'chirilib tashlanadi va user ni puli o'ziga qaytib keladi va u pulni ustiga qo'shib yoki o'sha pulga boshqa ovaqat sotib olishi mumkin -> Qiyin lekin qilinishi keark
-    Lekin pul qaytarib berilmaydi
-    Promocode -> Boshqa ovaqtni zakaz qilvotganda shu promocode ni kirita oladi, va eski pulini ishlata oladi -> Big brain bo'ladi lekin 😂
+        Inline tugmalar:
+            🛒 Savatga | Menyu
 
-
----------- 🥗 Kategoriyalar ----------
-Reply button lar chiqaramiz
-    🔥 Ozish uchun ovqatlar | 💪 Semirish uchun ovqatlar
-
-Ozish uchun ovqatlar:
-    Inline button lar yaratiladi: Ovqatlar nomi chiqadi
-Semirish uchun ovqatlar:
-    Inline button lar yaratiladi: Ovqatlar nomi chiqadi
-
-
----------- Ovqalar ro'yxatidan biri tanlansa ----------
-Ovqatni rasmi chiqadi
-Ovqatni batafsil malumoti chiqadi -> kaloriya, protein va foydasi
-Ovqatni narxi
-
-Inline tugmalar yaratiladi
-    🛒 Savatga qo‘shish | Menyu
-
-
----------- Savatga qo'shish bosilganda ----------
-Inline button ko'rsatiladi
-    🍳 Nonushta | 🍛 Tushlik | 🍽 Kechki ovqat | Menyu
-
-Nonushta:
-    Inline buttons ko'rsatiladi: (7:00 | 8:00 | 9:00)
-Tushlik:
-    Inline buttons ko'rsatiladi: (12:00 | 13:00 | 14:00)
-Kechki ovqat:
-    Inline buttons ko'rsatiladi: (018:00 | 19:00 | 20:0)
-
-
----------- Vaqtlardan biri tanlansa ----------
-Ovqatni rasmi
-Ovqatni batafsil malumoti
-Ovqatni narxi
-Meal_type -> (Nonushta/Tushlik/Kechki ovqat uchun)
-Meal_time -> Yetkazib berilishi kerak bo'lgan vaqt
-
-Inline buttons
+5. 🛒 Savatga
+Foydalanuvchi mahsulot sonini shu yerning o'zida o'zgartira oladi.
+Retro kabobnikiga oxshatib inline buttons lar qoshamiz:
+    + | count (name) | - |
+    ......................
     Savatga qo'shish | Menyu
 
-    Savatga qo'shish: Qoshildi va menyu ni chiqramiz
+6. Savatga qo'shish
+Xarid savati 🛒
+🛍 Ovqatlar: Ovqalar nomlari va count
+--------------------------------------
+Yetkazib berish narxi: summa
+Summa: ovqalarning summasi + yetkazib berish narxi + foyda
 
+INline buttons lar qo'shiladi
+    + | count (name) | - |
+    ......................
+    Savatni tozalash | Rasmiylashtirish
 
----------- Savat ----------
-Nonushta uchun: Ovqatn nomi/Ovqatni narxi/Yetkazib berish vaqti
-Tushlik uchun: Ovqatn nomi/Ovqatni narxi/Yetkazib berish vaqti
-Kechki ovqat uchun: Ovqatn nomi/Ovqatni narxi/Yetkazib berish vaqti
-Nechi kun: 1 hata (default)
+7. Savatni tozalash
+Order ni ochirib tashlaymiz -> Yani orderni statusini (canceled) ga o'zgartiramiz
 
-Yetkazib berish narxi
-Umumiy summa:
+8. Rasmiylashtirish
+Buyurtmani yakunlash uchun oxirgi qadamlar:
+    Telefon: 📱 Kontakni yuborish tugmasi orqali
+    Manzil: 📍 Lokatsiya yuborish
+    To'lov: Naqd/Click
 
-Inline buttons
-    2 hatalik | 1 oylik uchun | Savatni tozalash | Rasmiylashtirish
+7. 📜 Oxirgi buyurtmam
+Foydalanuvchi eski buyurtmasini ko'rib, bitta tugma bilan ularni takrorlashi mumkin.
 
-    Oxirgi message yani savat edit qilinadi: Yetkazib berish narxi va ummumiy summa va yana nechi kunligini ham
+Sana: Qanchon zakaz qilinganligi
+Jami summa: ...
+Status (Holati): Yetkazilib berildi yoki yo'lda
 
+inline tugamalar:
+    Ovqatni ko'rish | Qayta buyurtma qilish
 
----------- Savatni tozalash ----------
-Savatni tozalab yuboramiz
-/Start ga qaytarib yuboramiz
-
-
----------- Rasmiylashtirish ----------
-Payment qismi shu yerda bo'ladi
-Payment qilib bo'lgandan keyin /start ga qaytarib yubormaiz
+Ovqatni korish bosilsa, tepada yozilgan code ishga tushadi
+Qayta buyurtma qilish bosilsa -> User ni savatga yuboramiz. User keyin (+ | -) yana foydalana oladi
