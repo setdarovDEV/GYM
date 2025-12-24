@@ -1,8 +1,8 @@
 FROM python:3.12-alpine
-WORKDIR app/
+WORKDIR /app
 COPY . .
-RUN pip install -r requirements.txt
-CMD python main.py
+RUN --mount=type=cache,id=custom-pip,target=/root/.cache/pip pip install -r requirements.txt # cache
+CMD ["python", "main.py"]
 
 #Terminalda run qilish uchun ->
 #-> docker build -t image_name  :version  image_name kichik bolishi kerak
