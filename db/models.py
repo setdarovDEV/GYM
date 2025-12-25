@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 from sqlalchemy import create_engine, String, ForeignKey, BigInteger, Numeric, Text, SmallInteger, Enum, DateTime
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, declared_attr, Session, sessionmaker
@@ -6,9 +7,14 @@ from os import getenv
 from dotenv import load_dotenv
 
 load_dotenv()
-engine = create_engine(f"postgresql+psycopg2://{load_dotenv("DB_USER")}:{getenv("DB_PASSWORD")}@localhost:{getenv("DB_PORT")}/{getenv("DB_NAME")}")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_PORT = os.getenv("DB_PORT", "5432")
+DB_NAME = os.getenv("DB_NAME")
+
+DATABASE_URL = f"postgresql+psycopg2://{DB_USER}:{DB_PASSWORD}@localhost:{DB_PORT}/{DB_NAME}"
+engine = create_engine(DATABASE_URL)
 session = Session(engine)
-engine.connect()
 
 class Base(DeclarativeBase):
     @declared_attr
