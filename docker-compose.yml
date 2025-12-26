@@ -6,7 +6,7 @@ services:
     container_name: pg
     restart: always
     entrypoint:
-      POSTGRES_PASSWORD:"lelouch0225"
+      POSTGRES_PASSWORD:"1"
     ports:
       - "5434:5432"
     volumes:
@@ -22,7 +22,5 @@ services:
     depends_on:
       - pg_service
 
-
 volumes:
   pgdata:
-
