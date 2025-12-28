@@ -6,7 +6,7 @@ from os import getenv
 from dotenv import load_dotenv
 
 load_dotenv()
-engine = create_engine(f"postgresql+psycopg2://{load_dotenv("DB_USER")}:{getenv("DB_PASSWORD")}@localhost:{getenv("DB_PORT")}/{getenv("DB_NAME")}")
+engine = create_engine(f"postgresql+psycopg2://{getenv('DB_USER')}:{getenv('DB_PASSWORD')}@localhost:{getenv('DB_PORT')}/{getenv('DB_NAME')}")
 session = Session(engine)
 engine.connect()
 
@@ -97,7 +97,7 @@ class Order(Base):
     user: Mapped["User"] = relationship(back_populates="orders")
     delivery: Mapped["Delivery"] = relationship(back_populates="orders")
     items: Mapped[list["OrderItem"]] = relationship(back_populates="order")
-    payments: Mapped["Payment"] = relationship(back_populates="order")
+    payments: Mapped[list["Payment"]] = relationship(back_populates="order")
 
 class OrderItem(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
