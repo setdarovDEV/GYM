@@ -3,7 +3,7 @@ from sqlalchemy import create_engine, String, ForeignKey, BigInteger, Numeric, T
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, declared_attr
 from enum import Enum as PyEnum
 
-engine = create_engine("postgresql+psycopg2://postgres:1@localhost:5432/sqlalchemy")
+engine = create_engine("postgresql+psycopg2://postgres:1@localhost:5432/gymbot")
 engine.connect()
 
 class Base(DeclarativeBase):
@@ -43,7 +43,7 @@ class ProductStatus(PyEnum):
 
 class Product(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
-    category_id: Mapped[int] = mapped_column(ForeignKey("categories.id", ondelete="NO ACTION"))
+    category_id: Mapped[int] = mapped_column(ForeignKey("categorys.id", ondelete="NO ACTION"))
     name: Mapped[str] = mapped_column(String(100))
     photo: Mapped[str] = mapped_column(String(255))
     description: Mapped[str] = mapped_column(Text)
@@ -72,7 +72,7 @@ class Delivery(Base):
     status: Mapped[DeliveryStatus] = mapped_column(Enum(DeliveryStatus, values_callable=lambda x: [i.value for i in x]), default=DeliveryStatus.PROCESSING.value)
     courier_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("couriers.id", ondelete="NO ACTION"))
 
-    courier: Mapped["Courier"] = relationship(back_populates="deliveries")
+    courier: Mapped["Courier"] = relationship(back_populates="deliverys")
     orders: Mapped[list["Order"]] = relationship(back_populates="delivery")
 
 class OrderStatus(PyEnum):
@@ -84,7 +84,7 @@ class Order(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("users.id", ondelete="CASCADE"))
     total: Mapped[int] = mapped_column(Numeric(12, 0), default=0)
-    delivery_id: Mapped[int] = mapped_column(ForeignKey("deliveries.id"))
+    delivery_id: Mapped[int] = mapped_column(ForeignKey("deliverys.id"))
     status: Mapped[OrderStatus] = mapped_column(Enum(OrderStatus, values_callable=lambda x: [i.value for i in x]),default=OrderStatus.PROCESS.value)
     order_date: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
