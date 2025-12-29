@@ -6,7 +6,7 @@ def start_button():
     menyu = KeyboardButton(text='🥗 Menyu')
     profilim = KeyboardButton(text='👤 Profilim ')
     savat = KeyboardButton(text='🛒 Savat')
-    oxirgi = KeyboardButton(text='📜 Oxirgi Buyurtma')
+    oxirgi = KeyboardButton(text='📜 Oxirgi Buyurtmalar')
     reply = ReplyKeyboardBuilder()
     reply.add(menyu, profilim, savat, oxirgi)
     reply.adjust(2, 2)
