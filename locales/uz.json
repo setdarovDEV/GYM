@@ -1,0 +1,180 @@
+{
+  "language_name": "O'zbek",
+  "language_flag": "🇺🇿",
+
+  "commands": {
+    "start": "Botni ishga tushirish",
+    "help": "Yordam",
+    "catalog": "Katalog",
+    "cart": "Savat",
+    "orders": "Mening buyurtmalarim",
+    "profile": "Profil",
+    "language": "Tilni o'zgartirish"
+  },
+
+  "buttons": {
+    "catalog": "📦 Mahsulotlar katalogi",
+    "cart": "🛒 Savat ({count})",
+    "orders": "📋 Mening buyurtmalarim",
+    "profile": "👤 Profil",
+    "settings": "⚙️ Sozlamalar",
+    "language": "🌐 Til",
+    "back": "◀️ Orqaga",
+    "back_to_menu": "🏠 Asosiy menyuga",
+    "confirm": "✅ Tasdiqlash",
+    "cancel": "❌ Bekor qilish",
+    "add_to_cart": "➕ Savatga",
+    "remove_from_cart": "➖ O'chirish",
+    "clear_cart": "🗑 Savatni tozalash",
+    "checkout": "💳 Buyurtma berish",
+    "share_phone": "📱 Raqamni yuborish",
+    "share_location": "📍 Manzilni yuborish"
+  },
+
+  "welcome": {
+    "first_time": "👋 <b>Gym Delivery</b> ga xush kelibsiz!\n\n💪 Biz sport ovqatlanishini uyingizgacha yetkazib beramiz.\n\n🚀 Davom etish uchun tilni tanlang:",
+    "returning": "👋 Xush kelibsiz, <b>{name}</b>!\n\n📦 Bugun nima buyurtma qilamiz?",
+    "language_selected": "✅ Til <b>O'zbekcha</b>ga o'zgartirildi"
+  },
+
+  "main_menu": {
+    "title": "📱 <b>Asosiy menyu</b>\n\nKerakli bo'limni tanlang:",
+    "choose_action": "Sizni nima qiziqtiradi?"
+  },
+
+  "catalog": {
+    "title": "📦 <b>Mahsulotlar katalogi</b>\n\nKategoriyani tanlang:",
+    "empty": "😔 Katalog bo'sh. Tez orada yangi mahsulotlar paydo bo'ladi!",
+    "category_selected": "Kategoriya: <b>{category}</b>",
+    "loading": "⏳ Mahsulotlar yuklanmoqda..."
+  },
+
+  "categories": {
+    "protein": "💪 Proteinlar",
+    "vitamins": "💊 Vitaminlar va minerallar",
+    "amino_acids": "🔬 Aminokislotalar",
+    "creatine": "⚡️ Kreatin",
+    "pre_workout": "🔥 Mashg'ulot oldidan",
+    "post_workout": "💧 Mashg'ulot keyin",
+    "weight_loss": "📉 Vazn yo'qotish uchun",
+    "weight_gain": "📈 Vazn olish uchun",
+    "energy": "⚡️ Energetiklar",
+    "health": "❤️ Sog'liq uchun",
+    "accessories": "🎽 Aksessuarlar"
+  },
+
+  "product": {
+    "title": "<b>{name}</b>\n\n",
+    "description": "📝 {description}\n\n",
+    "price": "💰 Narxi: <b>{price} so'm</b>\n",
+    "weight": "⚖️ Og'irligi: {weight}\n",
+    "brand": "🏷 Brend: {brand}\n",
+    "in_stock": "✅ Mavjud: {count} dona\n",
+    "out_of_stock": "❌ <b>Mavjud emas</b>",
+    "added_to_cart": "✅ <b>{name}</b> savatga qo'shildi!",
+    "removed_from_cart": "🗑 Mahsulot savatdan o'chirildi",
+    "quantity": "Miqdori: {quantity} dona"
+  },
+
+  "cart": {
+    "title": "🛒 <b>Savatingiz</b>\n\n",
+    "empty": "🛒 Savatingiz bo'sh\n\n💡 Katalogga o'ting va mahsulot qo'shing",
+    "item": "• <b>{name}</b>\n  {quantity} x {price} = {total} so'm\n\n",
+    "total": "💰 <b>Jami: {total} so'm</b>",
+    "delivery_fee": "🚚 Yetkazib berish: {fee} so'm",
+    "grand_total": "💳 <b>To'lov: {total} so'm</b>",
+    "cleared": "🗑 Savat tozalandi",
+    "proceed_to_checkout": "Buyurtma berishga o'tamizmi?",
+    "min_order_amount": "⚠️ Minimal buyurtma summasi: {amount} so'm\nSavatingizda: {current} so'm"
+  },
+
+  "checkout": {
+    "title": "📋 <b>Buyurtma rasmiylashtirish</b>\n\n",
+    "enter_phone": "📱 Iltimos, telefon raqamingizni yuboring:\n\n💡 Quyidagi tugmadan foydalaning yoki qo'lda kiriting",
+    "enter_address": "📍 Iltimos, yetkazib berish manzilini yuboring:\n\n💡 Geolokatsiyani yuborishingiz yoki manzilni yozishingiz mumkin",
+    "enter_comment": "💬 Buyurtmaga izoh bormi?\n\n💡 Xohishlaringizni yozing yoki /skip bosing",
+    "payment_method": "💳 To'lov usulini tanlang:",
+    "confirm_order": "✅ <b>Buyurtmani tasdiqlang</b>\n\n{cart_info}\n\n📱 Telefon: {phone}\n📍 Manzil: {address}\n💳 To'lov: {payment}\n💬 Izoh: {comment}",
+    "phone_invalid": "❌ Telefon raqami noto'g'ri formatda\n\n💡 Misol: +998901234567",
+    "address_required": "❌ Manzil to'ldirilishi shart",
+    "order_created": "✅ <b>Buyurtma #{order_id} muvaffaqiyatli yaratildi!</b>\n\n📦 Holat: {status}\n⏰ Kutilayotgan vaqt: {time}\n\n💬 Tez orada siz bilan bog'lanamiz",
+    "order_failed": "❌ Buyurtma yaratilmadi. Keyinroq urinib ko'ring"
+  },
+
+  "payment_methods": {
+    "cash": "💵 Naqd pul (qabul qilishda)",
+    "card": "💳 Karta (kuryerga)",
+    "online": "🌐 Onlayn to'lov",
+    "payme": "💳 Payme",
+    "click": "💳 Click"
+  },
+
+  "orders": {
+    "title": "📋 <b>Mening buyurtmalarim</b>\n\n",
+    "empty": "📋 Sizda hali buyurtmalar yo'q\n\n💡 Katalogdan birinchi buyurtma bering!",
+    "list_item": "🆔 Buyurtma #{id}\n📅 {date}\n💰 {total} so'm\n📊 Holat: {status}\n\n",
+    "detail": "📦 <b>Buyurtma #{id}</b>\n\n📅 Sana: {date}\n📊 Holat: <b>{status}</b>\n\n<b>Mahsulotlar:</b>\n{items}\n\n💰 Summa: {total} so'm\n🚚 Yetkazish: {delivery} so'm\n💳 Jami: {grand_total} so'm\n\n📱 Telefon: {phone}\n📍 Manzil: {address}",
+    "cancel": "Buyurtmani bekor qilish",
+    "cancel_confirm": "❓ #{id} buyurtmani bekor qilishga ishonchingiz komilmi?",
+    "cancelled": "✅ Buyurtma #{id} bekor qilindi",
+    "cannot_cancel": "❌ Bu buyurtmani bekor qilish mumkin emas (holat: {status})",
+    "repeat": "🔄 Buyurtmani takrorlash"
+  },
+
+  "order_statuses": {
+    "pending": "⏳ Tasdiqlanish kutilmoqda",
+    "confirmed": "✅ Tasdiqlangan",
+    "preparing": "👨‍🍳 Tayyorlanmoqda",
+    "delivering": "🚚 Yo'lda",
+    "delivered": "✅ Yetkazildi",
+    "cancelled": "❌ Bekor qilindi"
+  },
+
+  "profile": {
+    "title": "👤 <b>Profil</b>\n\n",
+    "info": "👤 Ism: <b>{name}</b>\n📱 Telefon: <b>{phone}</b>\n🌐 Til: <b>{language}</b>\n📅 Ro'yxatdan o'tgan: {date}\n📦 Jami buyurtmalar: {orders_count}\n💰 Buyurtmalar summasi: {orders_total} so'm",
+    "no_phone": "ko'rsatilmagan",
+    "edit": "✏️ Profilni tahrirlash",
+    "edit_name": "Yangi ismni kiriting:",
+    "edit_phone": "Yangi telefon raqamni kiriting:",
+    "updated": "✅ Profil yangilandi"
+  },
+
+  "settings": {
+    "title": "⚙️ <b>Sozlamalar</b>\n\nHarakatni tanlang:",
+    "language_title": "🌐 <b>Til tanlash</b>\n\nInterfeys tilini tanlang:",
+    "notifications": "🔔 Bildirishnomalar",
+    "notifications_on": "✅ Bildirishnomalar yoqilgan",
+    "notifications_off": "🔕 Bildirishnomalar o'chirilgan"
+  },
+
+  "admin": {
+    "panel": "👨‍💼 <b>Admin panel</b>\n\n📊 Statistika:\n👥 Foydalanuvchilar: {users}\n📦 Buyurtmalar: {orders}\n💰 Aylanma: {revenue} so'm",
+    "add_product": "➕ Mahsulot qo'shish",
+    "products_list": "📦 Mahsulotlar ro'yxati",
+    "orders_list": "📋 Buyurtmalar ro'yxati",
+    "users_list": "👥 Foydalanuvchilar ro'yxati",
+    "broadcast": "📢 Xabar yuborish",
+    "stats": "📊 Statistika"
+  },
+
+  "errors": {
+    "general": "❌ Xatolik yuz berdi. Keyinroq urinib ko'ring",
+    "not_found": "❌ Topilmadi",
+    "invalid_input": "❌ Ma'lumot formati noto'g'ri",
+    "permission_denied": "❌ Ruxsat etilmagan",
+    "try_again": "🔄 Qaytadan urinib ko'ring"
+  },
+
+  "common": {
+    "yes": "Ha",
+    "no": "Yo'q",
+    "save": "Saqlash",
+    "cancel": "Bekor qilish",
+    "delete": "O'chirish",
+    "edit": "Tahrirlash",
+    "loading": "⏳ Yuklanmoqda...",
+    "success": "✅ Muvaffaqiyatli!",
+    "error": "❌ Xatolik"
+  }
+}

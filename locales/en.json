@@ -1,0 +1,180 @@
+{
+  "language_name": "English",
+  "language_flag": "🇬🇧",
+
+  "commands": {
+    "start": "Start bot",
+    "help": "Help",
+    "catalog": "Catalog",
+    "cart": "Cart",
+    "orders": "My orders",
+    "profile": "Profile",
+    "language": "Change language"
+  },
+
+  "buttons": {
+    "catalog": "📦 Product Catalog",
+    "cart": "🛒 Cart ({count})",
+    "orders": "📋 My Orders",
+    "profile": "👤 Profile",
+    "settings": "⚙️ Settings",
+    "language": "🌐 Language",
+    "back": "◀️ Back",
+    "back_to_menu": "🏠 Main Menu",
+    "confirm": "✅ Confirm",
+    "cancel": "❌ Cancel",
+    "add_to_cart": "➕ Add to Cart",
+    "remove_from_cart": "➖ Remove",
+    "clear_cart": "🗑 Clear Cart",
+    "checkout": "💳 Checkout",
+    "share_phone": "📱 Share Phone",
+    "share_location": "📍 Share Location"
+  },
+
+  "welcome": {
+    "first_time": "👋 Welcome to <b>Gym Delivery</b>!\n\n💪 We deliver sports nutrition right to your door.\n\n🚀 Choose language to continue:",
+    "returning": "👋 Welcome back, <b>{name}</b>!\n\n📦 What would you like to order today?",
+    "language_selected": "✅ Language changed to <b>English</b>"
+  },
+
+  "main_menu": {
+    "title": "📱 <b>Main Menu</b>\n\nChoose section:",
+    "choose_action": "What are you interested in?"
+  },
+
+  "catalog": {
+    "title": "📦 <b>Product Catalog</b>\n\nSelect category:",
+    "empty": "😔 Catalog is empty. New products coming soon!",
+    "category_selected": "Category: <b>{category}</b>",
+    "loading": "⏳ Loading products..."
+  },
+
+  "categories": {
+    "protein": "💪 Proteins",
+    "vitamins": "💊 Vitamins & Minerals",
+    "amino_acids": "🔬 Amino Acids",
+    "creatine": "⚡️ Creatine",
+    "pre_workout": "🔥 Pre-Workout",
+    "post_workout": "💧 Post-Workout",
+    "weight_loss": "📉 Weight Loss",
+    "weight_gain": "📈 Weight Gain",
+    "energy": "⚡️ Energy",
+    "health": "❤️ Health",
+    "accessories": "🎽 Accessories"
+  },
+
+  "product": {
+    "title": "<b>{name}</b>\n\n",
+    "description": "📝 {description}\n\n",
+    "price": "💰 Price: <b>{price} sum</b>\n",
+    "weight": "⚖️ Weight: {weight}\n",
+    "brand": "🏷 Brand: {brand}\n",
+    "in_stock": "✅ In stock: {count} pcs\n",
+    "out_of_stock": "❌ <b>Out of stock</b>",
+    "added_to_cart": "✅ <b>{name}</b> added to cart!",
+    "removed_from_cart": "🗑 Product removed from cart",
+    "quantity": "Quantity: {quantity} pcs"
+  },
+
+  "cart": {
+    "title": "🛒 <b>Your Cart</b>\n\n",
+    "empty": "🛒 Your cart is empty\n\n💡 Go to catalog and add products",
+    "item": "• <b>{name}</b>\n  {quantity} x {price} = {total} sum\n\n",
+    "total": "💰 <b>Total: {total} sum</b>",
+    "delivery_fee": "🚚 Delivery: {fee} sum",
+    "grand_total": "💳 <b>Grand Total: {total} sum</b>",
+    "cleared": "🗑 Cart cleared",
+    "proceed_to_checkout": "Proceed to checkout?",
+    "min_order_amount": "⚠️ Minimum order amount: {amount} sum\nYour cart: {current} sum"
+  },
+
+  "checkout": {
+    "title": "📋 <b>Checkout</b>\n\n",
+    "enter_phone": "📱 Please send your phone number:\n\n💡 Use button below or enter manually",
+    "enter_address": "📍 Please send delivery address:\n\n💡 You can send location or type address",
+    "enter_comment": "💬 Any comments for the order?\n\n💡 Write your wishes or press /skip",
+    "payment_method": "💳 Choose payment method:",
+    "confirm_order": "✅ <b>Confirm Order</b>\n\n{cart_info}\n\n📱 Phone: {phone}\n📍 Address: {address}\n💳 Payment: {payment}\n💬 Comment: {comment}",
+    "phone_invalid": "❌ Invalid phone number format\n\n💡 Example: +998901234567",
+    "address_required": "❌ Address is required",
+    "order_created": "✅ <b>Order #{order_id} successfully created!</b>\n\n📦 Status: {status}\n⏰ Expected delivery: {time}\n\n💬 We'll contact you soon",
+    "order_failed": "❌ Failed to create order. Try later"
+  },
+
+  "payment_methods": {
+    "cash": "💵 Cash on delivery",
+    "card": "💳 Card to courier",
+    "online": "🌐 Online payment",
+    "payme": "💳 Payme",
+    "click": "💳 Click"
+  },
+
+  "orders": {
+    "title": "📋 <b>My Orders</b>\n\n",
+    "empty": "📋 You have no orders yet\n\n💡 Make your first order from catalog!",
+    "list_item": "🆔 Order #{id}\n📅 {date}\n💰 {total} sum\n📊 Status: {status}\n\n",
+    "detail": "📦 <b>Order #{id}</b>\n\n📅 Date: {date}\n📊 Status: <b>{status}</b>\n\n<b>Items:</b>\n{items}\n\n💰 Amount: {total} sum\n🚚 Delivery: {delivery} sum\n💳 Total: {grand_total} sum\n\n📱 Phone: {phone}\n📍 Address: {address}",
+    "cancel": "Cancel order",
+    "cancel_confirm": "❓ Are you sure you want to cancel order #{id}?",
+    "cancelled": "✅ Order #{id} cancelled",
+    "cannot_cancel": "❌ Cannot cancel this order (status: {status})",
+    "repeat": "🔄 Repeat order"
+  },
+
+  "order_statuses": {
+    "pending": "⏳ Pending confirmation",
+    "confirmed": "✅ Confirmed",
+    "preparing": "👨‍🍳 Preparing",
+    "delivering": "🚚 On the way",
+    "delivered": "✅ Delivered",
+    "cancelled": "❌ Cancelled"
+  },
+
+  "profile": {
+    "title": "👤 <b>Profile</b>\n\n",
+    "info": "👤 Name: <b>{name}</b>\n📱 Phone: <b>{phone}</b>\n🌐 Language: <b>{language}</b>\n📅 Registered: {date}\n📦 Total orders: {orders_count}\n💰 Order amount: {orders_total} sum",
+    "no_phone": "not specified",
+    "edit": "✏️ Edit profile",
+    "edit_name": "Enter new name:",
+    "edit_phone": "Enter new phone number:",
+    "updated": "✅ Profile updated"
+  },
+
+  "settings": {
+    "title": "⚙️ <b>Settings</b>\n\nChoose action:",
+    "language_title": "🌐 <b>Language Selection</b>\n\nChoose interface language:",
+    "notifications": "🔔 Notifications",
+    "notifications_on": "✅ Notifications enabled",
+    "notifications_off": "🔕 Notifications disabled"
+  },
+
+  "admin": {
+    "panel": "👨‍💼 <b>Admin Panel</b>\n\n📊 Statistics:\n👥 Users: {users}\n📦 Orders: {orders}\n💰 Revenue: {revenue} sum",
+    "add_product": "➕ Add Product",
+    "products_list": "📦 Products List",
+    "orders_list": "📋 Orders List",
+    "users_list": "👥 Users List",
+    "broadcast": "📢 Broadcast",
+    "stats": "📊 Statistics"
+  },
+
+  "errors": {
+    "general": "❌ An error occurred. Try later",
+    "not_found": "❌ Not found",
+    "invalid_input": "❌ Invalid data format",
+    "permission_denied": "❌ Permission denied",
+    "try_again": "🔄 Try again"
+  },
+
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "loading": "⏳ Loading...",
+    "success": "✅ Success!",
+    "error": "❌ Error"
+  }
+}
